@@ -1,14 +1,13 @@
 import { useAppSelector } from "../hook";
-import { useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import { Props } from "./Types";
 
 const PublickRoute: React.FC<Props> = ({
   component: Component,
   redirect = "/",
-}): any => {
-  const navigate = useNavigate();
+}): JSX.Element => {
   const isLogged = useAppSelector((state) => state.auth.isLoggedIn);
-  return isLogged ? navigate(redirect) : Component;
+  return isLogged ? <Navigate to={redirect} /> : Component;
 };
 
 export { PublickRoute };

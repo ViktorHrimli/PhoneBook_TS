@@ -1,12 +1,10 @@
 import { Box } from "../commonStyle/Common.styled";
 import { Route, Routes } from "react-router-dom";
 import { lazy, Suspense, useEffect } from "react";
-// import { PublickRoute } from "./PublickRoute";
-// import { PrivateRoute } from "./PrivateRoute";
+import { PublickRoute } from "./PublickRoute";
+import { PrivateRoute } from "./PrivateRoute";
 import { fetchRefreshUser } from "../redux/auth/authOperations";
 import { useTypedDispatch } from "../redux/store";
-// import { PublickRoute } from "./PublickRoute";
-// import { PrivateRoute } from "./PrivateRoute";
 
 const Home = lazy(() => import("../Page/Home/Home"));
 const RegisterUser = lazy(() => import("../Page/Register/Register"));
@@ -25,7 +23,7 @@ export const App: React.FC<{}> = () => {
       <Box display="flex" border="1px solid black" borderRadius="15px">
         <Suspense fallback={<div>...Loading</div>}>
           <Routes>
-            {/* <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home />} />
 
             <Route
               path="/register"
@@ -48,11 +46,7 @@ export const App: React.FC<{}> = () => {
               element={
                 <PrivateRoute redirect="/login" component={<UserMenu />} />
               }
-            /> */}
-            <Route path="/" element={<Home />} />
-            <Route path="/register" element={<RegisterUser />} />
-            <Route path="/login" element={<LogIn />} />
-            <Route path="/contacts" element={<UserMenu />} />
+            />
           </Routes>
         </Suspense>
       </Box>
