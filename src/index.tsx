@@ -20,6 +20,7 @@ root.render(
         <BrowserRouter>
           <ThemeProvider theme={theme}>
             <GlobalStyled />
+
             <App />
           </ThemeProvider>
         </BrowserRouter>
