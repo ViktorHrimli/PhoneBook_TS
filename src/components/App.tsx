@@ -44,7 +44,7 @@ export const App: React.FC<{}> = () => {
             <Route
               path="/contacts"
               element={
-                <PrivateRoute redirect="/login" component={<UserMenu />} />
+                <PrivateRoute redirect="/register" component={<UserMenu />} />
               }
             />
           </Routes>

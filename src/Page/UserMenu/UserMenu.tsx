@@ -1,4 +1,4 @@
-import { Box, Links, icons } from "../../commonStyle/Common.styled";
+import { Box, icons } from "../../commonStyle/Common.styled";
 import { Phonebook } from "../../components/PhoneBook/PhoneBook";
 import { ConteierContacts, NameText } from "./UserMenu.styled";
 import { fetchLogOutUser } from "../../redux/auth/authOperations";
@@ -6,6 +6,7 @@ import { useTypedDispatch } from "../../redux/store";
 import { Button } from "@mui/material";
 import { useAppSelector } from "../../hook";
 import { useLocation, useNavigate } from "react-router-dom";
+import { BackNavigation } from "../../components/BackNavigation/BackNavigation";
 
 const UserMenu: React.FC<{}> = () => {
   const location = useLocation();
@@ -14,7 +15,7 @@ const UserMenu: React.FC<{}> = () => {
   const dispatch = useTypedDispatch();
 
   const navigate = useNavigate();
-  const { IconsExpand, IconsCheckBox, IconsStanby, IconsRecord } = icons;
+  const { IconsRecord } = icons;
 
   const handleLogOutUser = () => {
     dispatch(fetchLogOutUser());
@@ -54,15 +55,7 @@ const UserMenu: React.FC<{}> = () => {
           mt="auto"
           width="380px"
         >
-          <Links to={location.state?.from ?? "/"}>
-            <IconsExpand />
-          </Links>
-          <Links to={location.state?.from ?? "/"}>
-            <IconsStanby />
-          </Links>
-          <Links to={location.state?.from ?? "/"}>
-            <IconsCheckBox />
-          </Links>
+          <BackNavigation locations={location.state?.from} />
         </Box>
       </ConteierContacts>
     </>

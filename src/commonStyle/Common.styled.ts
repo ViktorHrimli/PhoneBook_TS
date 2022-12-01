@@ -4,7 +4,6 @@ import ModeStandbyIcon from "@mui/icons-material/ModeStandby";
 import CheckBoxOutlineBlankIcon from "@mui/icons-material/CheckBoxOutlineBlank";
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 
-import { Field } from "formik";
 import { theme } from "../Thema";
 import { Link } from "react-router-dom";
 import {
@@ -84,7 +83,7 @@ export const GlobalStyled = createGlobalStyle`
   }
 `;
 
-export const Input = styled(Field)`
+export const Input = styled.input`
   position: relative;
   width: ${(p) => p.theme.space[8] + 30}px;
   padding: ${(p) => p.theme.space[3]}px;

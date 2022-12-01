@@ -1,7 +1,5 @@
 import styled from "styled-components";
 import { Conteier } from "../../commonStyle/Common.styled";
-import { Form } from "formik";
-
 type Props = {
   display: string;
   flexDirection: string;
@@ -9,7 +7,7 @@ type Props = {
   justifyContent: string;
 };
 
-export const FormContact = styled(Form)`
+export const FormContact = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
