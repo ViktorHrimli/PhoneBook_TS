@@ -2,7 +2,7 @@ import { ChangeEvent } from "react";
 import { filterContact } from "../../redux/contacts/filterSlice";
 import { useAppSelector } from "../../hook";
 import { useTypedDispatch } from "../../redux/store";
-import { Input } from "./Filter.styled";
+import { Input } from "../../commonStyle/Common.styled";
 
 export const Filter = () => {
   const dispatch = useTypedDispatch();

@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import { Form } from "formik";
 import { Conteier } from "../../commonStyle/Common.styled";
+import { Link } from "react-router-dom";
 
-export const FormContact = styled(Form)`
+export const FormContact = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,6 +14,14 @@ export const Eror = styled.p`
   font-size: ${(p) => p.theme.fontSizes.m};
   font-weight: ${(p) => p.theme.fontWeights.bold};
   color: ${(p) => p.theme.colors.muted};
+`;
+
+export const Redirect = styled(Link)`
+  margin-top: ${(p) => p.theme.space[4]}px;
+  font-family: ${(p) => p.theme.fonts.monospace};
+  font-size: ${(p) => p.theme.fontSizes.m};
+  font-weight: ${(p) => p.theme.fontWeights.bold};
+  color: ${(p) => p.theme.colors.white};
 `;
 
 export const ConteierRegister = styled(Conteier)`
