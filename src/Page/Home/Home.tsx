@@ -8,6 +8,7 @@ const Home: React.FC<{}> = () => {
   return (
     <Conteier>
       <Navigation />
+
       <Text>
         <TitleText>Україна починається з тебе</TitleText> <br /> В’ячеслав
         Чорновіл
@@ -17,7 +18,7 @@ const Home: React.FC<{}> = () => {
         alignItems="flex-end"
         gridGap="20px"
         justifyContent="space-around"
-        mt={[155]}
+        mt={[170, 250]}
       >
         <IconsExpand />
         <IconsStanby />
