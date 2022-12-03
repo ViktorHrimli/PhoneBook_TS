@@ -4,6 +4,7 @@ import { ConteierContacts, NameText } from "./UserMenu.styled";
 import { fetchLogOutUser } from "../../redux/auth/authOperations";
 import { useTypedDispatch } from "../../redux/store";
 import { Button } from "@mui/material";
+import LogoutIcon from "@mui/icons-material/Logout";
 import { useAppSelector } from "../../hook";
 import { useLocation, useNavigate } from "react-router-dom";
 import { BackNavigation } from "../../components/BackNavigation/BackNavigation";
@@ -27,21 +28,21 @@ const UserMenu: React.FC<{}> = () => {
       <ConteierContacts>
         <IconsRecord />
         <Box
-          width="380px"
           display="flex"
           alignItems="center"
           justifyContent="space-between"
-          gridGap={[20]}
+          gridGap={[80]}
           px={[3]}
+          mt={[20]}
         >
           <NameText>Hello {userName}</NameText>
-
           <Button
             variant="contained"
             color="primary"
             size="small"
             type="button"
             onClick={handleLogOutUser}
+            endIcon={<LogoutIcon />}
           >
             Logout
           </Button>
@@ -50,10 +51,9 @@ const UserMenu: React.FC<{}> = () => {
         <Box
           display="flex"
           alignItems="flex-start"
-          gridGap="20px"
+          gridGap="100px"
           justifyContent="space-around"
           mt="auto"
-          width="380px"
         >
           <BackNavigation locations={location.state?.from} />
         </Box>

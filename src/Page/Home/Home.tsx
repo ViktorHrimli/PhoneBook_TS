@@ -1,5 +1,5 @@
-import { TitleText, Text } from "./Home.styled";
-import { Box, Conteier, icons } from "../../commonStyle/Common.styled";
+import { TitleText, Text, ConteinerNavBack } from "./Home.styled";
+import { Conteier, icons } from "../../commonStyle/Common.styled";
 import { Navigation } from "../../components/Navigation/Navigations";
 
 const Home: React.FC<{}> = () => {
@@ -13,17 +13,11 @@ const Home: React.FC<{}> = () => {
         <TitleText>Україна починається з тебе</TitleText> <br /> В’ячеслав
         Чорновіл
       </Text>
-      <Box
-        display="flex"
-        alignItems="flex-end"
-        gridGap="20px"
-        justifyContent="space-around"
-        mt={[170, 250]}
-      >
+      <ConteinerNavBack>
         <IconsExpand />
         <IconsStanby />
         <IconsCheckBox />
-      </Box>
+      </ConteinerNavBack>
     </Conteier>
   );
 };

@@ -24,11 +24,10 @@ export const Phonebook: React.FC<{}> = () => {
       display="flex"
       flexDirection="column"
       alignItems="center"
-      mt="10px"
+      mt="40px"
       gridGap="10px"
     >
       <Formes />
-
       <Filter />
 
       <ContactList>

@@ -32,7 +32,7 @@ export function Navigation() {
         />
         <IconsRecord />
         <Media
-          query="(min-width: 380px)"
+          query="(min-width: 381px)"
           render={() => (
             <>
               <LinksContacts to="/contacts" state={{ from: location }}>
