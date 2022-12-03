@@ -25,8 +25,6 @@ export const fethcRegisterUser = createAsyncThunk<
     setAuthToken(data.token);
     return data;
   } catch (error: any) {
-    console.log(error);
-
     Notiflix.Notify.warning(
       "This email address already create, please choose different email address"
     );

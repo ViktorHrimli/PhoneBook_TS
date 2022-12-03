@@ -56,6 +56,13 @@ export const GlobalStyled = createGlobalStyle`
     padding: 0;
     font-family: ${theme.fonts.heading};
     color: ${theme.colors.white};
+    @media screen and (min-width: 480px) {
+        background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+       background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("https://proxy10.online.ua/oboi/r2-d2/004/225/273/view4bbc1675159fc.jpg");
+    }
   }
   h1,
   h2,
@@ -119,18 +126,28 @@ export const LinksContacts = styled(Links)`
 `;
 
 export const Conteier = styled.div`
-  width: 380px;
-  height: 600px;
+  min-width: 95vw;
+  height: 97vh;
   padding: ${(p) => p.theme.space[3]}px;
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
     url("https://mobimg.b-cdn.net/v3/fetch/01/01f2c43831ed91f9b5e28e0892c1f612.jpeg?h=900&r=0.5");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  border-radius: 15px;
+  border: 2px solid black;
+
+  @media screen and (min-width: 480px) {
+    min-width: 380px;
+    border-radius: 15px;
+    border: 1px solid black;
+  }
 `;
 
 const IconsRecord = styled(FiberManualRecordIcon)`
+  position: absolute;
+  top: 1%;
+  left: 48%;
+
   width: 20px;
   height: 20px;
   color: #000;

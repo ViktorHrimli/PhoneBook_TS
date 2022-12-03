@@ -7,6 +7,7 @@ export const FormContact = styled.form`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-top: 30px;
 `;
 
 export const Eror = styled.p`
