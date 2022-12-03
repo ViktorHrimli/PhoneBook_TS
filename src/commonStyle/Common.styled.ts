@@ -1,4 +1,5 @@
 import styled, { createGlobalStyle } from "styled-components";
+import { Boxes } from "./types";
 import ExpandCircleDownIcon from "@mui/icons-material/ExpandCircleDown";
 import ModeStandbyIcon from "@mui/icons-material/ModeStandby";
 import CheckBoxOutlineBlankIcon from "@mui/icons-material/CheckBoxOutlineBlank";
@@ -16,28 +17,6 @@ import {
   position,
   border,
 } from "styled-system";
-type Mt = Array<number | string> | string;
-
-type Boxes = {
-  background?: string;
-  color?: string;
-  space?: number | string;
-  layout?: string;
-  flexbox?: string;
-  grid?: string | number;
-  position?: string;
-  border?: string | number;
-  display?: string;
-  alignItems?: string;
-  justifyContent?: string;
-  mt?: Mt;
-  width?: string;
-  flexDirection?: string;
-  gridGap?: Mt;
-  px?: Mt;
-  borderRadius?: string;
-  py?: Mt;
-};
 
 export const Box = styled("div")<Boxes>(
   background,
@@ -57,7 +36,7 @@ export const GlobalStyled = createGlobalStyle`
     font-family: ${theme.fonts.heading};
     color: ${theme.colors.white};
     @media screen and (min-width: 480px) {
-        background-position: center;
+  background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
        background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
