@@ -3,6 +3,7 @@ import { LoginAuth, LoginlogIn, UserData, UserProps } from "./Types";
 
 import axios from "axios";
 import Notiflix from "notiflix";
+import { useNavigate } from "react-router-dom";
 
 axios.defaults.baseURL = "https://connections-api.herokuapp.com";
 
@@ -20,8 +21,10 @@ export const fethcRegisterUser = createAsyncThunk<
   { rejectValue: string }
 >("auth/register", async (user, thunkApi: any) => {
   try {
+    const navigate = useNavigate();
     if (!user) return;
     const { data } = await axios.post("/users/signup", user);
+    navigate("/contacts", { replace: true });
     setAuthToken(data.token);
     return data;
   } catch (error: any) {
@@ -38,7 +41,9 @@ export const fetchLogInUser = createAsyncThunk<
   { rejectValue: string }
 >("auth/logIn", async (user, thunkApi) => {
   try {
+    const navigate = useNavigate();
     const { data } = await axios.post("/users/login", user);
+    navigate("/contacts", { replace: true });
 
     setAuthToken(data.token);
     return data;

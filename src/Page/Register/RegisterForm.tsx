@@ -3,7 +3,6 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { Button } from "@mui/material";
 import { useTypedDispatch } from "../../redux/store";
-import { useNavigate } from "react-router-dom";
 import { Box, Input } from "../../commonStyle/Common.styled";
 import { fethcRegisterUser } from "../../redux/auth/authOperations";
 import { FormContact, Eror } from "./Register.styled";
@@ -21,7 +20,6 @@ const initialValue: IValue = { name: "", email: "", password: "" };
 
 const RegisterForm: React.FC<{}> = (): JSX.Element => {
   const dispatch = useTypedDispatch();
-  const navigate = useNavigate();
 
   const {
     register,
@@ -39,7 +37,6 @@ const RegisterForm: React.FC<{}> = (): JSX.Element => {
     if (user) {
       dispatch(fethcRegisterUser(user));
       reset();
-      navigate("/contacts", { replace: true });
     }
   };
 

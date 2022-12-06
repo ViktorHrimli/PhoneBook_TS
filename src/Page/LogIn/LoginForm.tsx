@@ -2,7 +2,6 @@ import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Button } from "@mui/material";
 import { Box, Input } from "../../commonStyle/Common.styled";
-import { useNavigate } from "react-router-dom";
 import { useTypedDispatch } from "../../redux/store";
 import { fetchLogInUser } from "../../redux/auth/authOperations";
 import { InitialProps } from "./Types";
@@ -20,7 +19,6 @@ const initialValue: InitialProps = { email: "", password: "" };
 
 const LoginForm: React.FC<{}> = (): JSX.Element => {
   const dispatch = useTypedDispatch();
-  const navigate = useNavigate();
   const {
     handleSubmit,
     register,
@@ -34,7 +32,6 @@ const LoginForm: React.FC<{}> = (): JSX.Element => {
   const hendleSubmit: SubmitHandler<InitialProps> = (user) => {
     if (user) {
       dispatch(fetchLogInUser(user));
-      navigate("/contacts");
       reset();
     }
   };
